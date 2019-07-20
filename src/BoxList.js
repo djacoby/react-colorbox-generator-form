@@ -20,10 +20,16 @@ export default class BoxList extends Component {
     }));
   }
 
+  remove(id) {
+    this.setState({
+      boxes: this.state.boxes.filter(box => box.id !== id)
+    });
+  }
+
   renderBoxes() {
     return this.state.boxes.map(box => (
       <Box
-        key={uuid()}
+        key={box.id}
         color={box.color}
         height={box.height}
         width={box.width}

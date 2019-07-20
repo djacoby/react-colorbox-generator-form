@@ -4,10 +4,6 @@ export default class Box extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      key: this.props.id,
-      color: this.props.color,
-      height: this.props.height,
-      width: this.props.width,
       visible: true
     };
     this.handleClick = this.handleClick.bind(this);
@@ -25,10 +21,10 @@ export default class Box extends Component {
         <div className="Box">
           <div
             style={{
-              key: `${this.state.id}`,
-              backgroundColor: `${this.state.color}`,
-              height: `${this.state.height}rem`,
-              width: `${this.state.width}rem`
+              key: `${this.props.id}`,
+              backgroundColor: `${this.props.color}`,
+              height: `${this.props.height}rem`,
+              width: `${this.props.width}rem`
             }}
           />
           <button className="btn btn-danger" onClick={this.handleClick}>
