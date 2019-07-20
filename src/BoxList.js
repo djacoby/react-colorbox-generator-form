@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NewBoxForm from "./NewBoxForm";
 import Box from "./Box";
-import uuid from "uuid/v4";
 import "./BoxList.css";
 
 export default class BoxList extends Component {
