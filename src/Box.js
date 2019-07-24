@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 import "./Box.css";
 export default class Box extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: true
-    };
-  }
-
   render() {
     return (
       <div className="Box">
