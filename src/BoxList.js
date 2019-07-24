@@ -12,8 +12,7 @@ export default class BoxList extends Component {
     this.addBox = this.addBox.bind(this);
   }
 
-  addBox(box) {
-    let newBox = { ...box };
+  addBox(newBox) {
     this.setState(state => ({
       boxes: [...state.boxes, newBox]
     }));
@@ -25,22 +24,20 @@ export default class BoxList extends Component {
     });
   }
 
-  renderBoxes() {
-    return this.state.boxes.map(box => (
+  render() {
+    const boxes = this.state.boxes.map(box => (
       <Box
         key={box.id}
         color={box.color}
         height={box.height}
         width={box.width}
+        removeBox={() => this.remove(box.id)}
       />
     ));
-  }
-
-  render() {
     return (
       <div className="BoxList">
         <NewBoxForm addBox={this.addBox} />
-        <div className="BoxList-boxes">{this.renderBoxes()}</div>
+        <div className="BoxList-boxes">{boxes}</div>
       </div>
     );
   }

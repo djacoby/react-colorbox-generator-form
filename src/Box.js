@@ -27,7 +27,7 @@ export default class Box extends Component {
               width: `${this.props.width}rem`
             }}
           />
-          <button className="btn btn-danger" onClick={this.handleClick}>
+          <button className="btn btn-danger" onClick={this.props.removeBox}>
             Remove Box
           </button>
         </div>
